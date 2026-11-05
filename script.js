@@ -12,4 +12,19 @@ if (btn && m) {
     var open = m.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(open));
   });
+  // Dismiss the menu once a destination is chosen, and on Escape, so it
+  // never sits open over the content after navigation.
+  m.addEventListener('click', function(e){
+    if (e.target.closest && e.target.closest('a')) {
+      m.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && m.classList.contains('open')) {
+      m.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.focus();
+    }
+  });
 }
