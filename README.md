@@ -17,7 +17,9 @@ Single-page marketing site for Aggarwal Jewellers — gold, diamond and
 - `index.html` — the whole page (sections in order: hero, trust strip,
   collections, featured, gold rate, about, reels, testimonials, visit, footer)
 - `style.css` — all styling, including the mobile layout under 900px/520px
-- `script.js` — mobile hamburger menu toggle (keeps `aria-expanded` in sync)
+- `script.js` — mobile hamburger menu toggle: a `.menu.open` class (not
+  inline styles, so resizing to desktop never strands the menu as an
+  overlay); closes on nav-link click or Escape, keeps `aria-expanded` in sync
 - `*.png` — hero, category, product and showroom images
 
 ## Preview locally
