@@ -8,8 +8,8 @@
 // so it never sits open over the content after navigation.
 // Guards both elements so a missing button or menu fails silently instead
 // of throwing on page load.
-var btn = document.querySelector('.hamburger');
-var m = document.querySelector('.menu');
+const btn = document.querySelector('.hamburger');
+const m = document.querySelector('.menu');
 if (btn && m) {
   // Single close path for every dismissal route below, so the class
   // removal and the aria-expanded sync can never drift apart.
@@ -19,7 +19,7 @@ if (btn && m) {
     if (refocus) btn.focus();
   }
   btn.addEventListener('click', function(){
-    var open = m.classList.toggle('open');
+    const open = m.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(open));
   });
   // Dismiss the menu once a destination is chosen.
