@@ -17,6 +17,8 @@ Single-page marketing site for Aggarwal Jewellers — gold, diamond and
 - `index.html` — the whole page (sections in order: hero, trust strip,
   collections, featured, gold rate, about, reels, testimonials, visit, footer)
 - `style.css` — all styling, including the mobile layout under 900px/520px
+- No inline `style=""` attributes remain — hero padding, rate `/g` sizing
+  and the visit lede colour all live in `style.css`
 - `script.js` — mobile hamburger menu toggle: a `.menu.open` class (not
   inline styles, so resizing to desktop never strands the menu as an
   overlay); closes on nav-link click, outside tap, or Escape (Escape returns
@@ -26,6 +28,11 @@ Single-page marketing site for Aggarwal Jewellers — gold, diamond and
 ## Accessibility
 
 - Skip-to-content link (first Tab stop) jumps to the collections section
+- Page content sits inside a `<main>` landmark; footer social links
+  (IG/WA) carry `aria-label` names instead of bare abbreviations
+- Open Graph/Twitter meta uses absolute URLs (`og:url`, `og:image`,
+  `twitter:image`) so link previews render; an inline SVG favicon
+  (gold diamond on dark tile) is linked in `<head>`
 - Visible `:focus-visible` outline on links and buttons; `prefers-reduced-motion`
   disables smooth scrolling, the WhatsApp pulse and hover lifts
 - Mobile menu works without JavaScript: a noscript fallback shows the menu
