@@ -42,4 +42,20 @@ if (menuButton && menu) {
       closeMenu(true);
     }
   });
+  // Close the menu when the viewport leaves the mobile breakpoint
+  // (e.g. rotating a tablet or widening the window). On desktop the
+  // menu is always visible as a nav row, so a lingering `.open` class
+  // would leave aria-expanded stuck on "true" for a menu that is no
+  // longer collapsible. The 900px value must match the breakpoint in
+  // style.css.
+  var mobileQuery = window.matchMedia('(max-width: 900px)');
+  function onBreakpointChange(e) {
+    if (!e.matches) closeMenu(false);
+  }
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener('change', onBreakpointChange);
+  } else if (mobileQuery.addListener) {
+    // Deprecated API, kept for older browsers without addEventListener.
+    mobileQuery.addListener(onBreakpointChange);
+  }
 }
