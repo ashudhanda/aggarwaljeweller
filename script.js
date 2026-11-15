@@ -8,22 +8,22 @@
 // so it never sits open over the content after navigation.
 // Guards both elements so a missing button or menu fails silently instead
 // of throwing on page load.
-const btn = document.querySelector('.hamburger');
-const m = document.querySelector('.menu');
-if (btn && m) {
+const menuButton = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+if (menuButton && menu) {
   // Single close path for every dismissal route below, so the class
   // removal and the aria-expanded sync can never drift apart.
   function closeMenu(refocus) {
-    m.classList.remove('open');
-    btn.setAttribute('aria-expanded', 'false');
-    if (refocus) btn.focus();
+    menu.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    if (refocus) menuButton.focus();
   }
-  btn.addEventListener('click', function(){
-    const open = m.classList.toggle('open');
-    btn.setAttribute('aria-expanded', String(open));
+  menuButton.addEventListener('click', function(){
+    const open = menu.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
   });
   // Dismiss the menu once a destination is chosen.
-  m.addEventListener('click', function(e){
+  menu.addEventListener('click', function(e){
     if (e.target.closest && e.target.closest('a')) {
       closeMenu(false);
     }
@@ -33,12 +33,12 @@ if (btn && m) {
   // itself is excluded: its own click handler owns the toggle, and this
   // listener runs after it in the bubble phase.
   document.addEventListener('click', function(e){
-    if (m.classList.contains('open') && !m.contains(e.target) && !btn.contains(e.target)) {
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !menuButton.contains(e.target)) {
       closeMenu(false);
     }
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && m.classList.contains('open')) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
       closeMenu(true);
     }
   });
