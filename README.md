@@ -3,6 +3,8 @@
 Single-page marketing site for Aggarwal Jewellers — gold, diamond and
 1-gram gold jewellery showrooms in Sector 20, Panchkula and The Mall, Solan.
 
+Live site: https://ashudhanda.github.io/aggarwaljeweller/
+
 ## What is on the page
 
 - Hero with WhatsApp enquiry links
