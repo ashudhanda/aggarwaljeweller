@@ -39,8 +39,15 @@ Live site: https://ashudhanda.github.io/aggarwaljeweller/
   disables smooth scrolling, the WhatsApp pulse and hover lifts
 - Mobile menu works without JavaScript: a noscript fallback shows the menu
   and hides the hamburger below 900px
-- Category tiles are plain cards, not links; decorative glyphs (✨ ▶ ☎) are
-  hidden from screen readers
+- Category tiles are links to a per-category WhatsApp enquiry (same pattern
+  as the product cards); decorative glyphs (✨ ▶ ☎) are hidden from screen
+  readers
+- Anchored sections carry `scroll-margin-top: 92px` so a nav/skip-link jump
+  clears the 76px sticky header instead of hiding the heading under it
+- Mobile menu links have vertical padding so each tap target is ~38px tall
+  (WCAG minimum is 24px)
+- JewelryStore JSON-LD in `<head>` (both showroom addresses, hours, Instagram)
+  and `og:image` width/height/alt for link previews
 
 ## Preview locally
 
