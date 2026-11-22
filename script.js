@@ -48,7 +48,7 @@ if (menuButton && menu) {
   // would leave aria-expanded stuck on "true" for a menu that is no
   // longer collapsible. The 900px value must match the breakpoint in
   // style.css.
-  var mobileQuery = window.matchMedia('(max-width: 900px)');
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
   function onBreakpointChange(e) {
     if (!e.matches) closeMenu(false);
   }
