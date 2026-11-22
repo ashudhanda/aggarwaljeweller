@@ -29,7 +29,9 @@ Live site: https://ashudhanda.github.io/aggarwaljeweller/
 
 ## Accessibility
 
-- Skip-to-content link (first Tab stop) jumps to the collections section
+- Skip-to-content link (first Tab stop) jumps to the hero, the start of the
+  main content; the hero carries `tabindex="-1"` so focus moves with it,
+  and `section[id]` scroll-margin clears the 76px sticky header
 - Page content sits inside a `<main>` landmark; footer social links
   (IG/WA) carry `aria-label` names instead of bare abbreviations
 - Open Graph/Twitter meta uses absolute URLs (`og:url`, `og:image`,
@@ -48,6 +50,11 @@ Live site: https://ashudhanda.github.io/aggarwaljeweller/
   (WCAG minimum is 24px)
 - JewelryStore JSON-LD in `<head>` (both showroom addresses, hours, Instagram)
   and `og:image` width/height/alt for link previews
+
+## Deploy
+
+The live site is served by GitHub Pages from the default branch — push to
+the branch and the site updates automatically. No build step.
 
 ## Preview locally
 
