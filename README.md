@@ -30,7 +30,9 @@ Live site: https://ashudhanda.github.io/aggarwaljeweller/
 ## Accessibility
 
 - Skip-to-content link (first Tab stop) jumps to the hero, the start of the
-  main content; the hero carries `tabindex="-1"` so focus moves with it,
+  main content; every nav-target section (`#hero`, `#collections`,
+  `#featured`, `#rate`, `#about`, `#visit`) carries `tabindex="-1"` so
+  focus moves with the anchor jump instead of staying on the link,
   and `section[id]` scroll-margin clears the 76px sticky header
 - Page content sits inside a `<main>` landmark; footer social links
   (IG/WA) carry `aria-label` names instead of bare abbreviations
@@ -42,8 +44,8 @@ Live site: https://ashudhanda.github.io/aggarwaljeweller/
 - Mobile menu works without JavaScript: a noscript fallback shows the menu
   and hides the hamburger below 900px
 - Category tiles are links to a per-category WhatsApp enquiry (same pattern
-  as the product cards); decorative glyphs (✨ ▶ ☎) are hidden from screen
-  readers
+  as the product cards); decorative glyphs (✨ ▶ ☎ ✓ •) are hidden from
+  screen readers
 - Anchored sections carry `scroll-margin-top: 92px` so a nav/skip-link jump
   clears the 76px sticky header instead of hiding the heading under it
 - Mobile menu links have vertical padding so each tap target is ~38px tall
